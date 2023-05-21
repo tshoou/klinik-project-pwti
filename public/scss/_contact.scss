@@ -1,0 +1,157 @@
+.sec-contact {
+    // height: 10;
+    position: relative;
+    font-family: $saira;
+    margin: 8rem auto;
+    .message {
+        width: 50vh;
+        background: #f3f7f9;
+        padding: 2rem;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+    .informasi-kontak {
+        background: $primary-colour;
+        padding: 5rem;
+        color: #fff;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        position: relative;
+        overflow: hidden;
+        h3 {
+            font-weight: 700;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            bottom: -25%;
+            right: -25%;
+            background: $second-colour;
+            width: 25rem;
+            height: 25rem;
+            border-radius: 50%;
+        }
+        i {
+            color: #fff;
+            font-size: 2rem;
+            &:hover {
+                color: $fourth-colour;
+            }
+        }
+        .informasi-rs {
+            .icon {
+                border: 1px solid #fff;
+                padding: 1rem;
+                margin-right: 1rem;
+                margin-bottom: 1rem;
+                width: 5rem;
+                i {
+                    color: #fff;
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+    .group {
+        position: relative;
+        margin-bottom: 2rem;
+
+        input {
+            font-size: 1.5rem;
+            padding: 10px 10px 10px 5px;
+            display: block;
+            width: 100%;
+            border: none;
+            background: #f3f7f9;
+            border-bottom: 0.1rem solid #757575;
+
+            &:focus {
+                outline: none;
+            }
+        }
+        textarea {
+            font-size: 1.5rem;
+            padding: 10px 10px 10px 5px;
+            display: block;
+            width: 100%;
+            border: none;
+            background: #f3f7f9;
+            border-bottom: 0.1rem solid #757575;
+        }
+        label {
+            color: #999;
+            font-size: 1rem;
+            font-weight: normal;
+            position: absolute;
+            pointer-events: none;
+            left: 5px;
+            top: 10px;
+            transition: 0.2s ease all;
+        }
+
+        input:focus ~ label,
+        input:valid ~ label {
+            top: -10px;
+            font-size: 1rem;
+            color: $primary-colour;
+        }
+
+        .bar {
+            position: relative;
+            display: block;
+            width: 65%;
+
+            &:before,
+            .bar:after {
+                content: "";
+                height: 2px;
+                width: 0;
+                bottom: 1px;
+                position: absolute;
+                background: $primary-colour;
+                transition: 0.2s ease all;
+            }
+
+            &:before {
+                left: 50%;
+            }
+
+            &:after {
+                right: 50%;
+            }
+        }
+
+        input:focus ~ .bar:before,
+        input:focus ~ .bar:after {
+            width: 100%;
+        }
+
+        .highlight {
+            position: absolute;
+            height: 60%;
+            width: 100px;
+            top: 25%;
+            left: 0;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        input:focus ~ .highlight {
+            animation: inputHighlighter 0.3s ease;
+        }
+
+        @keyframes inputHighlighter {
+            from {
+                background: $primary-colour;
+            }
+
+            to {
+                width: 0;
+                background: transparent;
+            }
+        }
+    }
+}
+.peta {
+    overflow: hidden;
+}
